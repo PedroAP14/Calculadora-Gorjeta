@@ -8,49 +8,67 @@
             Padding="30,0"
             Spacing="25">
 
-            <Label
-                Text="Subtotal:" />
-
             <Entry
-                x:Name="NomeEntry"
-                Placeholder="Digite aqui o nome do usúario" />
+                x:Name="ValorContaEntry"
+                Placeholder="Digite aqui o valor da conta" />
 
             <Label
-                Text="Gorjeta" />
+                Text="Gorjeta:" 
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Valor da gorgeta" />
 
             <Label
-                Text="15%" />
-
-            <Button
-                x:Name="Botao15Porcento"
-                Text="15%" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Fill" />
-
-            <Button
-                x:Name="Botao20Porcento"
-                Text="20%" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Fill" />
+                Text="0.00"
+                x:Name="ValorGorgetaLabel" />
 
             <Label
-                Text="Total:" />
+                Text="Total:"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Valor total da conta" />
 
             <Label
-                Text="R$00,00"/>
+                Text="0.00"
+                x:Name="ValorTotalLabel" />
+
+            <Label
+                Text="Percentual da Gorgeta:"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Percentual da gorgeta" />
+
+            <Label 
+                Text="0%"
+                x:Name="PercentualGorgetaLabel" />
+
+            <Slider
+                x:Name="PorcetagemValorSlider"
+                Minimum="0"
+                Maximum="100"
+                SemanticProperties.Description="Porcetagem da Gorgeta"
+                ValueChanged="PorcetagemValorSlider_ValueChanged"/>
 
             <Button
-                x:Name="BotaoArrendodarParaCima"
-                Text="Arrendondar para Cima" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Fill" />
+                 x:Name="Gorgeta15PorcentoButton"
+                 Text="15%" 
+                 SemanticProperties.Hint="15% de gorgeta"
+                 Clicked="Gorgeta15PorcentoButton_Clicked" />
 
             <Button
-                x:Name="BotaoArrendodarParaBaixo"
+                 x:Name="Gorgeta20PorcentoButton"
+                 Text="20%" 
+                 SemanticProperties.Hint="20% de gorgeta"
+                 Clicked="Gorgeta20PorcentoButton_Clicked" />
+
+            <Button
+                x:Name="ArrendondarParaBaixoButton"
                 Text="Arrendondar para Baixo" 
-                SemanticProperties.Hint="Counts the number of times you click"                
-                HorizontalOptions="Fill" />
-            
+                SemanticProperties.Hint="Arredonda o valor da gorgeta para baixo"
+                Clicked="ArrendondarParaBaixoButton_Clicked"/>
+
+            <Button
+                x:Name="BotaoArrendodarParaCimaButton"
+                Text="Arrendondar para Cima" 
+                SemanticProperties.Hint="Arredonda o valor da gorgeta para cima"                
+                Clicked="BotaoArrendodarParaCimaButton_Clicked" />
             
         </VerticalStackLayout>
     </ScrollView>
