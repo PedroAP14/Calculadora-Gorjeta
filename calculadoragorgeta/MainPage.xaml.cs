@@ -20,22 +20,30 @@
 
         private void ArrendondarParaBaixoButton_Clicked(object sender, EventArgs e)
         {
+            ValorGorgetaLabel.Text = Math.Floor(Convert.ToDouble(ValorGorgetaLabel.Text)).ToString();
 
+            double valorGorgeta = Convert.ToDouble(ValorGorgetaLabel.Text);
+            valorConta = Convert.ToDouble(ValorContaEntry.Text);
+            ValorTotalLabel.Text = $"{valorConta + valorGorgeta}";
         }
 
         private void BotaoArrendodarParaCimaButton_Clicked(object sender, EventArgs e)
         {
+            ValorGorgetaLabel.Text = Math.Ceiling(Convert.ToDouble(ValorGorgetaLabel.Text)).ToString();
 
+            double valorGorgeta = Convert.ToDouble(ValorGorgetaLabel.Text);
+            valorConta = Convert.ToDouble(ValorContaEntry.Text);
+            ValorTotalLabel.Text = $"{valorConta + valorGorgeta}";
         }
 
         private void PorcetagemValorSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            PercentualGorgetaLabel.Text = PorcetagemValorSlider.Value.ToString() + "%";
+            PercentualGorgetaLabel.Text = $"{Math.Round(PorcetagemValorSlider.Value, 2)} %";
             valorConta = Convert.ToDouble(ValorContaEntry.Text);
             double valorGorgeta = valorConta * (PorcetagemValorSlider.Value / 100);
 
-            ValorGorgetaLabel.Text = valorGorgeta.ToString();
-            ValorTotalLabel.Text = (valorConta + valorGorgeta).ToString();
+            ValorGorgetaLabel.Text = $"{valorGorgeta}";
+            ValorTotalLabel.Text = $"{valorConta + valorGorgeta}";
         }
     }
 }

@@ -13,6 +13,15 @@
                 Placeholder="Digite aqui o valor da conta" />
 
             <Label
+                 Text="Percentual da Gorgeta:"
+                 SemanticProperties.HeadingLevel="Level1"
+                 SemanticProperties.Description="Percentual da gorgeta" />
+
+            <Label 
+             Text="0%"
+             x:Name="PercentualGorgetaLabel" />
+
+            <Label
                 Text="Gorjeta:" 
                 SemanticProperties.HeadingLevel="Level1"
                 SemanticProperties.Description="Valor da gorgeta" />
@@ -20,6 +29,15 @@
             <Label
                 Text="0.00"
                 x:Name="ValorGorgetaLabel" />
+
+
+            <Slider
+                x:Name="PorcetagemValorSlider"
+                Minimum="0"
+                Maximum="100"
+                Value="0"
+                SemanticProperties.Description="Porcetagem da Gorgeta"
+                ValueChanged="PorcetagemValorSlider_ValueChanged"/>
 
             <Label
                 Text="Total:"
@@ -29,22 +47,6 @@
             <Label
                 Text="0.00"
                 x:Name="ValorTotalLabel" />
-
-            <Label
-                Text="Percentual da Gorgeta:"
-                SemanticProperties.HeadingLevel="Level1"
-                SemanticProperties.Description="Percentual da gorgeta" />
-
-            <Label 
-                Text="0%"
-                x:Name="PercentualGorgetaLabel" />
-
-            <Slider
-                x:Name="PorcetagemValorSlider"
-                Minimum="0"
-                Maximum="100"
-                SemanticProperties.Description="Porcetagem da Gorgeta"
-                ValueChanged="PorcetagemValorSlider_ValueChanged"/>
 
             <Button
                  x:Name="Gorgeta15PorcentoButton"
